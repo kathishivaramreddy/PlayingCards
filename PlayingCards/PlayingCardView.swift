@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+@IBDesignable
 class PlayingCardView: UIView {
-
-    var rank:Int = 5  {didSet{setNeedsDisplay();setNeedsLayout()}}
+    
+    @IBInspectable
+    var rank:Int = 1  {didSet{setNeedsDisplay();setNeedsLayout()}}
+    @IBInspectable
     var suit:String = "♥️" {didSet{setNeedsDisplay();setNeedsLayout()}}
-    var isFaceUp:Bool = true {didSet{setNeedsDisplay();setNeedsLayout()}}
+    @IBInspectable
+    var isFaceUp:Bool = true        {didSet{setNeedsDisplay();setNeedsLayout()}}
     
     private func centeredAttributedString(_ string: String,fontSize: CGFloat) -> NSAttributedString {
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
@@ -109,10 +112,16 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         rounderRect.fill()
         
-        if let faceCardImage = UIImage(named: rankString+suit) {
-            faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+        if isFaceUp {
+            if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
+                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+            }else{
+                drawPips()
+            }
         }else{
-            drawPips()
+            if let cardBackImage = UIImage(named: "cardback", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection){
+                cardBackImage.draw(in: bounds)
+            }
         }
     }
 }
