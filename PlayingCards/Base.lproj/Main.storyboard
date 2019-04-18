@@ -19,16 +19,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Bos-RR-I36" customClass="PlayingCardView" customModule="PlayingCards" customModuleProvider="target">
-                                <rect key="frame" x="21" y="44" width="374" height="818"/>
+                                <rect key="frame" x="16" y="147.5" width="382" height="611"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="800" id="WTi-fU-ji0"/>
+                                    <constraint firstAttribute="width" secondItem="Bos-RR-I36" secondAttribute="height" multiplier="5:8" id="uyE-7S-b3Q"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Bos-RR-I36" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="N3G-eK-4pc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bos-RR-I36" secondAttribute="trailing" constant="19" id="UBT-eW-Jpd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bos-RR-I36" secondAttribute="bottom" id="qkb-J4-fYd"/>
-                            <constraint firstItem="Bos-RR-I36" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z8K-c5-HgG"/>
+                            <constraint firstItem="Bos-RR-I36" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0Mi-tV-Nfy"/>
+                            <constraint firstItem="Bos-RR-I36" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="N3G-eK-4pc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bos-RR-I36" secondAttribute="trailing" constant="16" id="UBT-eW-Jpd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bos-RR-I36" secondAttribute="bottom" constant="16" id="qkb-J4-fYd"/>
+                            <constraint firstItem="Bos-RR-I36" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="z8K-c5-HgG"/>
+                            <constraint firstItem="Bos-RR-I36" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zRW-ld-HDl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
